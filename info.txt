@@ -1,3 +1,3 @@
-roads~ es una herramienta granular flexible que puede cumplir diversas funciones
+roads~ es un efecto de audio granular polifónico (varios "trenes" de granos en distintas alturas)
 
 autor: dylan martin
