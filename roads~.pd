@@ -1,4 +1,4 @@
-#N canvas 458 52 451 692 12;
+#N canvas 913 52 451 692 12;
 #N canvas 686 35 677 708 adsr 0;
 #X msg 292 72 legato \$1;
 #X msg 222 72 rel \$1;
@@ -1138,7 +1138,7 @@ de unidad;
 #X connect 5 0 2 0;
 #X restore 90 271 pd out gain;
 #X obj 212 300 *~;
-#N canvas 686 35 677 708 voices 0;
+#N canvas 276 82 269 662 voices 0;
 #X msg 12 122 1;
 #X msg 47 122 0;
 #X obj 12 92 delay 10;
@@ -1269,12 +1269,9 @@ de unidad;
 #X msg 787 479 50;
 #X obj 617 67 loadbang;
 #X msg 617 96 1;
-#X obj 617 125 s \$0-rate-den-r;
-#X obj 617 149 s \$0-rate-num-r;
 #X obj 617 173 s \$0-length-den-r;
 #X obj 617 197 s \$0-length-num-r;
 #X msg 646 96 0;
-#X obj 646 251 s \$0-rate-sync-r;
 #X obj 646 275 s \$0-length-sync-r;
 #X obj 782 178 s \$0-note0-tog-r;
 #X msg 675 96 100;
@@ -1300,18 +1297,11 @@ de unidad;
 #X obj 850 300 r \$0-note2-tog;
 #X obj 234 131 t b b;
 #X msg 309 160 0;
-#X msg 284 160 300;
 #X msg 234 160 100;
 #X obj 234 102 loadbang;
 #X obj 646 323 s \$0-grain-duration-unit;
 #X obj 646 299 s \$0-grain-rate-unit;
-#X obj 34 485 s \$0-grain-rate-r;
-#X obj 82 295 s \$0-grain-duration-r;
 #X obj 24 135 inlet;
-#X msg 82 270 set \$1;
-#X obj 72 320 s \$0-grain-duration;
-#X msg 34 460 set \$1;
-#X obj 24 510 s \$0-grain-rate;
 #X obj 24 160 route rate length chance dir;
 #X msg 178 190 set \$1;
 #X obj 178 215 s \$0-grain-dir-r;
@@ -1319,11 +1309,6 @@ de unidad;
 #X obj 168 240 s \$0-grain-dir;
 #X obj 120 400 s \$0-grain-chance;
 #X obj 130 375 s \$0-grain-chance-r;
-#X obj 24 430 route float tog;
-#X msg 85 565 set \$1;
-#X obj 75 540 != 0;
-#X obj 85 590 s \$0-rate-tog-r;
-#X obj 75 615 s \$0-rate-tog;
 #X msg 259 160 1;
 #X msg 275 301 set \$1;
 #X obj 265 351 s \$0-smear;
@@ -1555,36 +1540,51 @@ de unidad;
 #X obj 591 475 s \$0-error;
 #X obj 368 580 s \$0-out;
 #X obj 378 555 s \$0-out-r;
-#N canvas 913 52 451 692 state 0;
+#N canvas 2 52 1362 692 state 0;
 #X obj 23 30 inlet;
 #X obj 23 55 t b b;
 #X obj 21 260 s \$0-state;
 #X msg 55 220 set;
-#N canvas 1026 52 338 692 grain 0;
+#N canvas 685 52 679 692 grain 0;
 #X obj 19 22 inlet;
 #X obj 19 77 f;
-#X obj 42 107 r \$0-rate-tog;
-#X obj 66 132 r \$0-grain-duration;
-#X obj 90 157 r \$0-grain-chance;
-#X obj 114 182 r \$0-grain-dir;
-#X obj 19 212 pack f f f f f;
-#X obj 19 297 outlet;
-#X msg 19 237 add2 rate \$1 \, addcomma \, add2 rate tog \$2 \, addcomma
-\, add2 length \$3 \, addcomma \, add2 chance \$4 \, addcomma \, add2
-dir \$5 \, addcomma;
+#X obj 36 107 r \$0-rate-tog;
+#X obj 54 132 r \$0-grain-duration;
+#X obj 72 157 r \$0-grain-chance;
+#X obj 90 182 r \$0-grain-dir;
+#X obj 19 487 outlet;
 #X obj 37 52 r \$0-grain-rate;
+#X obj 108 207 r \$0-rate-sync;
+#X obj 162 282 r \$0-length-sync;
+#X obj 126 232 r \$0-rate-num;
+#X obj 144 257 r \$0-rate-den;
+#X obj 180 307 r \$0-length-num;
+#X obj 198 332 r \$0-length-den;
+#X obj 19 362 pack f f f f f f f f f f f;
+#X msg 19 387 add2 rate \$1 \, addcomma \, add2 rate tog \$2 \, addcomma
+\, add2 length \$3 \, addcomma \, add2 chance \$4 \, addcomma \, add2
+dir \$5 \, addcomma \, add2 rate sync \$6 \, addcomma \, add2 rate
+num \$7 \, addcomma \, add2 rate den \$8 \, addcomma \, add2 length
+sync \$9 \, addcomma \, add2 length num \$10 \, addcomma \, add2 length
+den \$11 \, addcomma;
 #X connect 0 0 1 0;
-#X connect 1 0 6 0;
-#X connect 2 0 6 1;
-#X connect 3 0 6 2;
-#X connect 4 0 6 3;
-#X connect 5 0 6 4;
-#X connect 6 0 8 0;
-#X connect 8 0 7 0;
-#X connect 9 0 1 1;
+#X connect 1 0 14 0;
+#X connect 2 0 14 1;
+#X connect 3 0 14 2;
+#X connect 4 0 14 3;
+#X connect 5 0 14 4;
+#X connect 7 0 1 1;
+#X connect 8 0 14 5;
+#X connect 9 0 14 8;
+#X connect 10 0 14 6;
+#X connect 11 0 14 7;
+#X connect 12 0 14 9;
+#X connect 13 0 14 10;
+#X connect 14 0 15 0;
+#X connect 15 0 6 0;
 #X restore 63 140 pd grain;
 #X obj 23 85 t b b b b;
-#N canvas 913 52 451 692 globals 0;
+#N canvas 685 52 679 692 globals 0;
 #X obj 14 12 inlet;
 #X obj 14 67 f;
 #X obj 14 307 outlet;
@@ -1769,6 +1769,101 @@ add2 drywet \$5 \, addcomma \, add2 gain \$6 \, addcomma;
 #X obj 356 101 print roads~;
 #X obj 512 562 route 0 1 2 3 4 5;
 #X obj 265 271 route smear detune stereo feedback drywet state;
+#N canvas 913 52 451 692 grain 0;
+#X obj 12 12 inlet;
+#X msg 222 42 100;
+#X obj 222 12 loadbang;
+#X obj 22 97 s \$0-grain-rate-r;
+#X msg 22 72 set \$1;
+#X obj 12 122 s \$0-grain-rate;
+#X msg 60 177 set \$1;
+#X obj 50 152 != 0;
+#X obj 60 202 s \$0-rate-tog-r;
+#X obj 50 227 s \$0-rate-tog;
+#X msg 247 42 1;
+#X obj 12 42 route float tog sync num den;
+#X msg 99 282 set \$1;
+#X obj 89 257 != 0;
+#X obj 99 307 s \$0-rate-sync-r;
+#X obj 89 332 s \$0-rate-sync;
+#X msg 137 362 set \$1;
+#X obj 137 387 s \$0-rate-num-r;
+#X obj 127 412 s \$0-rate-num;
+#X msg 176 72 set \$1;
+#X obj 176 97 s \$0-rate-den-r;
+#X obj 166 122 s \$0-rate-den;
+#X msg 272 42 0;
+#X obj 205 472 s \$0-error;
+#X connect 0 0 11 0;
+#X connect 1 0 3 0;
+#X connect 2 0 1 0;
+#X connect 2 0 10 0;
+#X connect 2 0 22 0;
+#X connect 4 0 3 0;
+#X connect 6 0 8 0;
+#X connect 7 0 6 0;
+#X connect 7 0 9 0;
+#X connect 10 0 8 0;
+#X connect 10 0 20 0;
+#X connect 10 0 17 0;
+#X connect 11 0 5 0;
+#X connect 11 0 4 0;
+#X connect 11 1 7 0;
+#X connect 11 2 13 0;
+#X connect 11 3 16 0;
+#X connect 11 3 18 0;
+#X connect 11 4 19 0;
+#X connect 11 4 21 0;
+#X connect 11 5 23 0;
+#X connect 12 0 14 0;
+#X connect 13 0 12 0;
+#X connect 13 0 15 0;
+#X connect 16 0 17 0;
+#X connect 19 0 20 0;
+#X connect 22 0 14 0;
+#X restore 24 190 pd grain;
+#N canvas 1095 82 269 662 length 0;
+#X obj 12 12 inlet;
+#X obj 222 12 loadbang;
+#X msg 22 72 set \$1;
+#X msg 63 177 set \$1;
+#X obj 53 152 != 0;
+#X msg 104 257 set \$1;
+#X msg 145 337 set \$1;
+#X obj 177 447 s \$0-error;
+#X msg 222 42 300;
+#X obj 22 97 s \$0-grain-duration-r;
+#X obj 12 122 s \$0-grain-duration;
+#X obj 12 42 route float sync num den;
+#X msg 247 42 0;
+#X msg 272 42 1;
+#X obj 63 202 s \$0-length-sync-r;
+#X obj 53 227 s \$0-length-sync;
+#X obj 104 282 s \$0-length-num-r;
+#X obj 94 307 s \$0-length-num;
+#X obj 145 362 s \$0-length-den-r;
+#X obj 135 387 s \$0-length-den;
+#X connect 0 0 11 0;
+#X connect 1 0 8 0;
+#X connect 2 0 9 0;
+#X connect 3 0 14 0;
+#X connect 4 0 3 0;
+#X connect 4 0 15 0;
+#X connect 5 0 16 0;
+#X connect 6 0 18 0;
+#X connect 8 0 9 0;
+#X connect 11 0 2 0;
+#X connect 11 0 10 0;
+#X connect 11 1 4 0;
+#X connect 11 2 5 0;
+#X connect 11 2 17 0;
+#X connect 11 3 6 0;
+#X connect 11 3 19 0;
+#X connect 11 4 7 0;
+#X connect 12 0 14 0;
+#X connect 13 0 16 0;
+#X connect 13 0 18 0;
+#X restore 72 220 pd length;
 #X connect 3 0 8 0;
 #X connect 4 0 3 0;
 #X connect 4 0 7 0;
@@ -1777,114 +1872,97 @@ add2 drywet \$5 \, addcomma \, add2 gain \$6 \, addcomma;
 #X connect 11 0 10 0;
 #X connect 11 0 9 0;
 #X connect 12 0 13 0;
-#X connect 12 0 18 0;
-#X connect 12 0 22 0;
-#X connect 12 0 23 0;
-#X connect 13 0 14 0;
+#X connect 12 0 16 0;
+#X connect 12 0 19 0;
+#X connect 12 0 20 0;
 #X connect 13 0 15 0;
-#X connect 13 0 17 0;
-#X connect 13 0 16 0;
-#X connect 18 0 19 0;
-#X connect 18 0 20 0;
-#X connect 18 0 49 0;
-#X connect 18 0 48 0;
-#X connect 23 0 24 0;
-#X connect 23 0 27 0;
-#X connect 23 0 29 0;
-#X connect 23 0 31 0;
-#X connect 23 0 33 0;
-#X connect 23 0 32 0;
-#X connect 24 0 21 0;
-#X connect 25 0 26 0;
-#X connect 26 0 24 1;
-#X connect 27 0 28 0;
-#X connect 29 0 30 0;
-#X connect 31 0 34 0;
-#X connect 32 0 35 0;
-#X connect 33 0 36 0;
-#X connect 37 0 24 1;
-#X connect 38 0 27 1;
-#X connect 39 0 31 1;
-#X connect 40 0 32 1;
-#X connect 41 0 33 1;
-#X connect 42 0 29 1;
-#X connect 43 0 46 0;
-#X connect 43 0 45 0;
-#X connect 43 0 69 0;
-#X connect 43 1 44 0;
-#X connect 44 0 59 0;
-#X connect 44 0 72 0;
-#X connect 44 0 75 0;
-#X connect 44 0 77 0;
-#X connect 44 0 80 0;
-#X connect 44 0 91 0;
-#X connect 44 0 103 0;
-#X connect 45 0 51 0;
-#X connect 46 0 50 0;
-#X connect 46 0 63 0;
-#X connect 46 0 84 0;
-#X connect 47 0 43 0;
-#X connect 52 0 57 0;
-#X connect 53 0 51 0;
-#X connect 55 0 50 0;
-#X connect 57 0 64 0;
-#X connect 57 1 53 0;
-#X connect 57 1 54 0;
-#X connect 57 2 60 0;
-#X connect 57 2 62 0;
-#X connect 57 3 58 0;
-#X connect 57 3 61 0;
-#X connect 57 4 109 0;
-#X connect 58 0 59 0;
-#X connect 60 0 63 0;
-#X connect 64 0 56 0;
-#X connect 64 0 55 0;
-#X connect 64 1 66 0;
-#X connect 64 2 101 0;
-#X connect 65 0 67 0;
-#X connect 66 0 65 0;
-#X connect 66 0 68 0;
-#X connect 69 0 67 0;
-#X connect 69 0 87 0;
-#X connect 70 0 72 0;
-#X connect 73 0 75 0;
-#X connect 76 0 77 0;
-#X connect 79 0 80 0;
-#X connect 82 0 84 0;
-#X connect 85 0 86 0;
-#X connect 85 0 88 0;
-#X connect 85 1 90 0;
-#X connect 85 2 101 0;
-#X connect 86 0 87 0;
-#X connect 89 0 91 0;
-#X connect 90 0 89 0;
-#X connect 90 0 92 0;
-#X connect 95 0 85 0;
-#X connect 95 1 96 0;
-#X connect 95 1 102 0;
-#X connect 95 2 108 0;
-#X connect 96 0 103 0;
-#X connect 105 0 106 0;
-#X connect 106 0 107 0;
-#X connect 108 0 93 0;
-#X connect 108 1 94 0;
-#X connect 108 2 97 0;
-#X connect 108 3 98 0;
-#X connect 108 4 99 0;
-#X connect 108 5 100 0;
-#X connect 108 6 101 0;
-#X connect 109 0 70 0;
-#X connect 109 0 71 0;
-#X connect 109 1 73 0;
-#X connect 109 1 74 0;
-#X connect 109 2 76 0;
-#X connect 109 2 78 0;
-#X connect 109 3 79 0;
-#X connect 109 3 81 0;
-#X connect 109 4 82 0;
-#X connect 109 4 83 0;
-#X connect 109 5 104 0;
-#X connect 109 6 95 0;
+#X connect 13 0 14 0;
+#X connect 16 0 17 0;
+#X connect 16 0 45 0;
+#X connect 16 0 44 0;
+#X connect 20 0 21 0;
+#X connect 20 0 24 0;
+#X connect 20 0 26 0;
+#X connect 20 0 28 0;
+#X connect 20 0 30 0;
+#X connect 20 0 29 0;
+#X connect 21 0 18 0;
+#X connect 22 0 23 0;
+#X connect 23 0 21 1;
+#X connect 24 0 25 0;
+#X connect 26 0 27 0;
+#X connect 28 0 31 0;
+#X connect 29 0 32 0;
+#X connect 30 0 33 0;
+#X connect 34 0 21 1;
+#X connect 35 0 24 1;
+#X connect 36 0 28 1;
+#X connect 37 0 29 1;
+#X connect 38 0 30 1;
+#X connect 39 0 26 1;
+#X connect 40 0 42 0;
+#X connect 40 0 54 0;
+#X connect 40 1 41 0;
+#X connect 41 0 49 0;
+#X connect 41 0 57 0;
+#X connect 41 0 60 0;
+#X connect 41 0 62 0;
+#X connect 41 0 65 0;
+#X connect 41 0 76 0;
+#X connect 41 0 88 0;
+#X connect 42 0 53 0;
+#X connect 42 0 69 0;
+#X connect 43 0 40 0;
+#X connect 46 0 47 0;
+#X connect 47 0 95 0;
+#X connect 47 1 96 0;
+#X connect 47 2 50 0;
+#X connect 47 2 52 0;
+#X connect 47 3 48 0;
+#X connect 47 3 51 0;
+#X connect 47 4 94 0;
+#X connect 48 0 49 0;
+#X connect 50 0 53 0;
+#X connect 54 0 72 0;
+#X connect 55 0 57 0;
+#X connect 58 0 60 0;
+#X connect 61 0 62 0;
+#X connect 64 0 65 0;
+#X connect 67 0 69 0;
+#X connect 70 0 71 0;
+#X connect 70 0 73 0;
+#X connect 70 1 75 0;
+#X connect 70 2 86 0;
+#X connect 71 0 72 0;
+#X connect 74 0 76 0;
+#X connect 75 0 74 0;
+#X connect 75 0 77 0;
+#X connect 80 0 70 0;
+#X connect 80 1 81 0;
+#X connect 80 1 87 0;
+#X connect 80 2 93 0;
+#X connect 81 0 88 0;
+#X connect 90 0 91 0;
+#X connect 91 0 92 0;
+#X connect 93 0 78 0;
+#X connect 93 1 79 0;
+#X connect 93 2 82 0;
+#X connect 93 3 83 0;
+#X connect 93 4 84 0;
+#X connect 93 5 85 0;
+#X connect 93 6 86 0;
+#X connect 94 0 55 0;
+#X connect 94 0 56 0;
+#X connect 94 1 58 0;
+#X connect 94 1 59 0;
+#X connect 94 2 61 0;
+#X connect 94 2 63 0;
+#X connect 94 3 64 0;
+#X connect 94 3 66 0;
+#X connect 94 4 67 0;
+#X connect 94 4 68 0;
+#X connect 94 5 89 0;
+#X connect 94 6 80 0;
 #X restore 300 59 pd route-inlet-messages;
 #N canvas 685 52 679 692 sample 0;
 #X obj 267 331 t b f;
@@ -2041,7 +2119,7 @@ nombres de las tablas y asi los granos pueden leer de ellas;
 #X obj 816 237 s \$0-playhead;
 #X obj 731 72 s \$0-rec;
 #X obj 848 177 s \$0-play;
-#N canvas -7 0 1366 685 camomile 0;
+#N canvas 685 52 679 692 camomile 0;
 #X obj 10 11 ./param.set 1 \$0-note0-tog;
 #X obj 10 59 ./param.set 2 \$0-note0-vel;
 #X obj 10 107 ./param.set 3 \$0-note0-pitch;
@@ -2126,6 +2204,8 @@ nombres de las tablas y asi los granos pueden leer de ellas;
 #X obj 10 35 ./param.get 1 \$0-note0-tog;
 #X obj 255 499 ./param.get 22 \$0-rate-den;
 #X obj 255 475 ./param.set 22 \$0-rate-den;
+#X obj 960 107 r \$0-preset-prev;
+#X obj 970 132 r \$0-preset-next;
 #X connect 35 0 36 0;
 #X connect 37 0 38 0;
 #X connect 38 0 35 0;
@@ -2133,6 +2213,8 @@ nombres de las tablas y asi los granos pueden leer de ellas;
 #X connect 40 0 37 0;
 #X connect 41 0 37 0;
 #X connect 42 0 37 0;
+#X connect 84 0 37 0;
+#X connect 85 0 37 0;
 #X restore 1136 568 pd camomile;
 #X obj 372 295 *~;
 #X obj 12 218 hip~ 10;
@@ -2268,7 +2350,7 @@ nombres de las tablas y asi los granos pueden leer de ellas;
 #X obj 710 305 == 0;
 #X obj 710 385 s \$0-grain-auto;
 #X obj 710 280 r \$0-rate-sync;
-#N canvas 913 52 451 692 sync-move-gui 1;
+#N canvas 685 52 679 692 sync-move-gui 0;
 #X obj 156 17 r \$0-rate-sync;
 #X obj 156 41 sel 0 1;
 #X msg 199 70 977 210;
@@ -2410,7 +2492,7 @@ nombres de las tablas y asi los granos pueden leer de ellas;
 #X connect 15 0 7 0;
 #X connect 16 0 13 1;
 #X restore 359 92 pd rate-sync;
-#N canvas -7 0 681 676 length-sync 0;
+#N canvas 685 52 679 692 length-sync 0;
 #X obj 37 45 route bpm;
 #X obj 37 69 t b f;
 #X msg 37 93 60000;
@@ -2448,11 +2530,11 @@ nombres de las tablas y asi los granos pueden leer de ellas;
 #X obj 285 305 r \$0-state;
 #X obj 285 330 outlet;
 #X obj 300 29 inlet;
-#X obj 942 176 cnv 15 168 294 empty empty empty 20 12 0 14 -33289 -66577
+#X obj 942 176 cnv 15 168 316 empty empty empty 20 12 0 14 -33289 -66577
 0;
-#X obj 948 182 cnv 15 156 282 empty empty empty 20 12 0 14 -253816
+#X obj 948 182 cnv 15 156 304 empty empty empty 20 12 0 14 -253816
 -66577 0;
-#X obj 953 262 cnv 2 145 2 empty \$0-bar empty 20 12 0 14 -33289 -1
+#X obj 953 262 cnv 2 146 2 empty \$0-bar empty 20 12 0 14 -33289 -1
 0;
 #X obj 953 311 nbx 3 15 0 100 0 0 \$0-stereo-amount-s \$0-stereo-amount-r
 stereo 0 -8 0 10 -33289 -253816 -33289 0 256;
@@ -2508,7 +2590,7 @@ empty 0 -8 0 10 -33289 -253816 -33289 0 256;
 empty -2 -8 0 10 -33289 -253816 -33289 0 1;
 #X obj 1037 185 tgl 10 0 \$0-length-sync-s \$0-length-sync-r sync 15
 4 0 10 -253816 -33289 -33289 0 1;
-#X obj 953 331 cnv 2 145 2 empty \$0-bar empty 20 12 0 14 -33289 -1
+#X obj 953 331 cnv 2 146 2 empty \$0-bar empty 20 12 0 14 -33289 -1
 0;
 #X obj 1010 281 nbx 4 15 -600 600 0 0 \$0-offset-pitch-s \$0-offset-pitch-r
 detune 0 -8 0 10 -33289 -253816 -33289 0 256;
@@ -2526,7 +2608,7 @@ detune 0 -8 0 10 -33289 -253816 -33289 0 256;
 33 4 0 10 -253816 -33289 -33289 0;
 #X obj 1047 401 tgl 10 0 \$0-smooth-s \$0-smooth-r smooth 15 4 0 10
 -253816 -33289 -33289 0 1;
-#X obj 1047 417 cnv 2 51 2 empty \$0-bar empty 20 12 0 14 -33289 -1
+#X obj 1047 417 cnv 2 52 2 empty \$0-bar empty 20 12 0 14 -33289 -1
 0;
 #X obj 1018 246 bng 10 250 50 0 \$0-trigger-s \$0-trigger-r trigger
 15 4 0 10 -253816 -33289 -33289;
@@ -2550,22 +2632,183 @@ length 0 -8 0 10 -33289 -253816 -33289 300 256;
 0;
 #X obj 1051 316 cnv 13 10 6 empty \$0-text % 1 2 0 10 -253816 -33289
 0;
-#X obj 20 20 nbx 1 15 1 9 0 0 \$0-rate-num-s \$0-rate-num-r rate 0
+#X obj 953 464 cnv 2 146 2 empty \$0-bar empty 20 12 0 14 -33289 -1
+0;
+#N canvas 2 52 1362 692 presets 0;
+#X obj 37 62 r \$0-preset-next;
+#X obj 12 12 r \$0-preset-prev;
+#X obj 37 87 t b b;
+#X obj 12 37 t b b;
+#X msg 44 127 -1;
+#X msg 69 127 1;
+#X obj 12 157 +, f 5;
+#X obj 12 127 f;
+#X obj 12 232 t f f;
+#X obj 12 207 change;
+#N canvas 685 52 679 692 default 0;
+#X obj 12 12 inlet;
+#X obj 12 202 outlet;
+#X obj 22 177 s \$0-preset-label;
+#X msg 22 152 label default;
+#X msg 12 37 smear 0 \, detune 0 \, stereo 0 \, feedback 0 \, drywet
+100 \, gain 0 \, rate 100 \, rate tog 1 \, length 300 \, chance 100
+\, dir 0 \, rate sync 0 \, rate num 1 \, rate den 1 \, length sync
+0 \, length num 1 \, length den 1 \, window shape 1 \, window smooth
+0 \, 0 1 \, 0 gain 100 \, 0 transpose 0 \, 1 0 \, 1 gain 0 \, 1 transpose
+0 \, 2 0 \, 2 gain 0 \, 2 transpose 0 \, 3 0 \, 3 gain 0 \, 3 transpose
+0 \, 4 0 \, 4 gain 0 \, 4 transpose 0 \, 5 0 \, 5 gain 0 \, 5 transpose
+0 \,;
+#X connect 0 0 4 0;
+#X connect 3 0 2 0;
+#X connect 4 0 1 0;
+#X connect 4 0 3 0;
+#X restore 12 317 pd default;
+#X obj 12 457 outlet;
+#X obj 12 292 sel 0 1 2 3 4;
+#X obj 12 182 clip 0 4;
+#X msg 180 327 pos \$1 \$2;
+#X obj 180 352 s \$0-preset-prev-r;
+#X obj 180 272 sel 0, f 9;
+#X obj 320 262 sel 4, f 9;
+#X msg 320 317 pos \$1 \$2;
+#X obj 320 342 s \$0-preset-next-r;
+#X msg 380 287 968 471;
+#X msg 240 297 953 471;
+#X msg 180 297 1093 183;
+#X msg 320 287 1093 183;
+#N canvas 685 52 679 692 reverse_shimmer 0;
+#X obj 12 12 inlet;
+#X obj 12 202 outlet;
+#X obj 22 177 s \$0-preset-label;
+#X msg 22 152 label reverse_shimmer;
+#X msg 12 37 smear 15 \, detune 15 \, stereo 50 \, feedback 25 \, drywet
+33.3333 \, gain 3 \, rate 100 \, rate tog 1 \, length 300 \, chance
+75 \, dir 1 \, rate sync 1 \, rate num 1 \, rate den 2 \, length sync
+1 \, length num 1 \, length den 1 \, window shape 3 \, window smooth
+1 \, 0 1 \, 0 gain 100 \, 0 transpose 0 \, 1 1 \, 1 gain 20 \, 1 transpose
+12 \, 2 0 \, 2 gain 0 \, 2 transpose 0 \, 3 0 \, 3 gain 0 \, 3 transpose
+0 \, 4 0 \, 4 gain 0 \, 4 transpose 0 \, 5 0 \, 5 gain 0 \, 5 transpose
+0 \,;
+#X connect 0 0 4 0;
+#X connect 3 0 2 0;
+#X connect 4 0 1 0;
+#X connect 4 0 3 0;
+#X restore 29 342 pd reverse_shimmer;
+#N canvas 685 52 679 692 lush_harmonies 0;
+#X obj 12 12 inlet;
+#X obj 12 217 outlet;
+#X obj 22 192 s \$0-preset-label;
+#X msg 22 167 label lush_harmonies;
+#X msg 12 37 smear 0 \, detune -20 \, stereo 0 \, feedback 0 \, drywet
+84.6154 \, gain -4 \, rate 100 \, rate tog 1 \, length 600 \, chance
+100 \, dir 2 \, rate sync 0 \, rate num 1 \, rate den 1 \, length sync
+0 \, length num 1 \, length den 1 \, window shape 1 \, window smooth
+0 \, 0 1 \, 0 gain 100 \, 0 transpose 0 \, 1 1 \, 1 gain 20 \, 1 transpose
+5 \, 2 1 \, 2 gain 33.3333 \, 2 transpose 7 \, 3 1 \, 3 gain 33.3333
+\, 3 transpose 12 \, 4 1 \, 4 gain 13.3333 \, 4 transpose -5 \, 5 1
+\, 5 gain 40 \, 5 transpose -12 \,;
+#X connect 0 0 4 0;
+#X connect 3 0 2 0;
+#X connect 4 0 1 0;
+#X connect 4 0 3 0;
+#X restore 47 367 pd lush_harmonies;
+#N canvas 685 52 679 692 rhythmic 0;
+#X obj 12 12 inlet;
+#X obj 12 217 outlet;
+#X obj 22 192 s \$0-preset-label;
+#X msg 22 167 label rhythmic;
+#X msg 12 37 smear 0 \, detune 0 \, stereo 0 \, feedback 0 \, drywet
+100 \, gain 1 \, rate 100 \, rate tog 1 \, length 128 \, chance 33
+\, dir 0 \, rate sync 1 \, rate num 1 \, rate den 4 \, length sync
+0 \, length num 1 \, length den 1 \, window shape 2 \, window smooth
+1 \, 0 1 \, 0 gain 86.6667 \, 0 transpose -12 \, 1 1 \, 1 gain 46.6667
+\, 1 transpose 12 \, 2 0 \, 2 gain 0 \, 2 transpose 0 \, 3 0 \, 3 gain
+0 \, 3 transpose 0 \, 4 0 \, 4 gain 0 \, 4 transpose 0 \, 5 0 \, 5
+gain 0 \, 5 transpose 0 \,;
+#X connect 0 0 4 0;
+#X connect 3 0 2 0;
+#X connect 4 0 1 0;
+#X connect 4 0 3 0;
+#X restore 64 392 pd rhythmic;
+#N canvas 685 52 679 692 sewer 0;
+#X obj 12 12 inlet;
+#X obj 12 217 outlet;
+#X obj 22 192 s \$0-preset-label;
+#X msg 22 167 label sewer;
+#X msg 12 37 smear 100 \, detune -9 \, stereo 100 \, feedback 95 \,
+drywet 100 \, gain -13 \, rate 2 \, rate tog 1 \, length 300 \, chance
+8 \, dir 2 \, rate sync 0 \, rate num 1 \, rate den 1 \, length sync
+0 \, length num 1 \, length den 1 \, window shape 2 \, window smooth
+1 \, 0 1 \, 0 gain 100 \, 0 transpose 0 \, 1 1 \, 1 gain 60 \, 1 transpose
+12 \, 2 1 \, 2 gain 33.3333 \, 2 transpose -12 \, 3 0 \, 3 gain 100
+\, 3 transpose 0 \, 4 0 \, 4 gain 0 \, 4 transpose 0 \, 5 0 \, 5 gain
+0 \, 5 transpose 0 \,;
+#X connect 0 0 4 0;
+#X connect 3 0 2 0;
+#X connect 4 0 1 0;
+#X connect 4 0 3 0;
+#X restore 82 417 pd sewer;
+#X connect 0 0 2 0;
+#X connect 1 0 3 0;
+#X connect 2 0 7 0;
+#X connect 2 1 5 0;
+#X connect 3 0 7 0;
+#X connect 3 1 4 0;
+#X connect 4 0 6 1;
+#X connect 5 0 6 1;
+#X connect 6 0 13 0;
+#X connect 7 0 6 0;
+#X connect 8 0 12 0;
+#X connect 8 1 7 1;
+#X connect 8 1 16 0;
+#X connect 8 1 17 0;
+#X connect 9 0 8 0;
+#X connect 10 0 11 0;
+#X connect 12 0 10 0;
+#X connect 12 1 24 0;
+#X connect 12 2 25 0;
+#X connect 12 3 26 0;
+#X connect 12 4 27 0;
+#X connect 13 0 9 0;
+#X connect 14 0 15 0;
+#X connect 16 0 22 0;
+#X connect 16 1 21 0;
+#X connect 17 0 23 0;
+#X connect 17 1 20 0;
+#X connect 18 0 19 0;
+#X connect 20 0 18 0;
+#X connect 21 0 14 0;
+#X connect 22 0 14 0;
+#X connect 23 0 18 0;
+#X connect 24 0 11 0;
+#X connect 25 0 11 0;
+#X connect 26 0 11 0;
+#X connect 27 0 11 0;
+#X restore 349 29 pd presets;
+#X obj 983 469 cnv 15 15 15 empty \$0-preset-label default 0 7 0 10
+-253816 -33289 0;
+#X obj 968 471 bng 10 250 50 0 \$0-preset-next \$0-preset-next-r >
+3 5 0 10 -33289 -253816 -253816;
+#X obj 1093 183 bng 10 250 50 0 \$0-preset-prev \$0-preset-prev-r <
+2 5 0 10 -33289 -253816 -253816;
+#X obj 1088 182 cnv 15 15 15 empty empty empty 20 12 0 14 -253816 -66577
+0;
+#X obj 977 20 nbx 1 15 1 9 0 0 \$0-rate-num-s \$0-rate-num-r rate 0
 -8 0 10 -33289 -253816 -33289 1 256;
-#X obj 20 20 nbx 1 15 1 9 0 0 \$0-rate-den-s \$0-rate-den-r empty 0
--8 0 10 -33289 -253816 -33289 1 256;
-#X obj 20 20 nbx 1 15 1 9 0 0 \$0-length-num-s \$0-length-num-r length
+#X obj 977 20 nbx 1 15 1 9 0 0 \$0-rate-den-s \$0-rate-den-r empty
 0 -8 0 10 -33289 -253816 -33289 1 256;
-#X obj 20 20 nbx 1 15 1 9 0 0 \$0-length-den-s \$0-length-den-r empty
+#X obj 1037 20 nbx 1 15 1 9 0 0 \$0-length-num-s \$0-length-num-r length
+0 -8 0 10 -33289 -253816 -33289 1 256;
+#X obj 1037 20 nbx 1 15 1 9 0 0 \$0-length-den-s \$0-length-den-r empty
 0 -8 0 10 -33289 -253816 -33289 1 256;
 #X obj 174 29 inlet~;
 #X obj 227 29 inlet~;
 #X obj 12 330 outlet~;
 #X obj 212 330 outlet~;
-#X connect 5 0 149 0;
+#X connect 5 0 155 0;
 #X connect 6 0 5 1;
 #X connect 6 0 7 1;
-#X connect 7 0 150 0;
+#X connect 7 0 156 0;
 #X connect 8 0 13 0;
 #X connect 11 0 14 1;
 #X connect 12 0 13 0;
@@ -2656,8 +2899,9 @@ length 0 -8 0 10 -33289 -253816 -33289 300 256;
 #X connect 89 0 22 0;
 #X connect 90 0 91 0;
 #X connect 92 0 9 0;
-#X connect 147 0 83 0;
-#X connect 147 0 15 0;
-#X connect 148 0 15 1;
-#X connect 148 0 84 0;
-#X coords 0 -1 1 1 168 300 2 942 173;
+#X connect 144 0 9 0;
+#X connect 153 0 83 0;
+#X connect 153 0 15 0;
+#X connect 154 0 15 1;
+#X connect 154 0 84 0;
+#X coords 0 -1 1 1 168 322 2 942 173;
