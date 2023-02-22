@@ -1,4 +1,4 @@
-#N canvas 913 52 451 692 12;
+#N canvas 458 52 451 692 12;
 #N canvas 686 35 677 708 adsr 0;
 #X msg 292 72 legato \$1;
 #X msg 222 72 rel \$1;
@@ -2268,14 +2268,14 @@ nombres de las tablas y asi los granos pueden leer de ellas;
 #X obj 710 305 == 0;
 #X obj 710 385 s \$0-grain-auto;
 #X obj 710 280 r \$0-rate-sync;
-#N canvas 685 52 679 692 sync-move-gui 0;
+#N canvas 913 52 451 692 sync-move-gui 1;
 #X obj 156 17 r \$0-rate-sync;
 #X obj 156 41 sel 0 1;
 #X msg 199 70 977 210;
 #X msg 156 99 pos \$1 \$2;
 #X obj 340 181 s \$0-grain-rate-label;
 #X msg 340 152 pos \$1 \$2;
-#X msg 379 122 1016 215;
+#X msg 399 122 1016 215;
 #X msg 66 121 977 210;
 #X msg 23 150 pos \$1 \$2;
 #X msg 184 152 pos \$1 \$2;
@@ -2293,56 +2293,56 @@ nombres de las tablas y asi los granos pueden leer de ellas;
 #X msg 788 154 1061 210;
 #X obj 684 130 s \$0-length-num-r;
 #X msg 727 72 1037 210;
-#X msg 340 122 20 20;
-#X msg 23 121 20 20;
-#X msg 551 123 20 20;
-#X msg 868 124 20 20;
-#X msg 156 70 20 20;
-#X msg 684 72 20 20;
 #X obj 23 179 s \$0-grain-rate-r;
 #X obj 551 181 s \$0-grain-duration-r;
 #X obj 184 181 s \$0-rate-den-r;
 #X obj 156 128 s \$0-rate-num-r;
+#X msg 23 121 977 20;
+#X msg 156 70 977 20;
+#X msg 340 122 1016 20;
+#X msg 551 123 1037 20;
+#X msg 684 72 1037 20;
+#X msg 868 124 1076 20;
 #X connect 0 0 1 0;
-#X connect 1 0 28 0;
+#X connect 1 0 29 0;
 #X connect 1 0 6 0;
 #X connect 1 0 7 0;
 #X connect 1 1 2 0;
-#X connect 1 1 24 0;
-#X connect 1 1 25 0;
+#X connect 1 1 30 0;
+#X connect 1 1 28 0;
 #X connect 1 1 10 0;
 #X connect 2 0 3 0;
-#X connect 3 0 33 0;
+#X connect 3 0 27 0;
 #X connect 5 0 4 0;
 #X connect 6 0 5 0;
 #X connect 7 0 8 0;
-#X connect 8 0 30 0;
-#X connect 9 0 32 0;
+#X connect 8 0 24 0;
+#X connect 9 0 26 0;
 #X connect 10 0 9 0;
-#X connect 11 0 29 0;
+#X connect 11 0 32 0;
 #X connect 11 0 20 0;
 #X connect 11 0 19 0;
 #X connect 11 1 23 0;
-#X connect 11 1 27 0;
-#X connect 11 1 26 0;
+#X connect 11 1 33 0;
+#X connect 11 1 31 0;
 #X connect 11 1 21 0;
 #X connect 12 0 22 0;
 #X connect 13 0 17 0;
-#X connect 14 0 31 0;
+#X connect 14 0 25 0;
 #X connect 15 0 18 0;
 #X connect 16 0 11 0;
 #X connect 19 0 14 0;
 #X connect 20 0 13 0;
 #X connect 21 0 15 0;
 #X connect 23 0 12 0;
-#X connect 24 0 5 0;
-#X connect 25 0 8 0;
-#X connect 26 0 14 0;
-#X connect 27 0 13 0;
-#X connect 28 0 3 0;
-#X connect 28 0 9 0;
-#X connect 29 0 12 0;
-#X connect 29 0 15 0;
+#X connect 28 0 8 0;
+#X connect 29 0 3 0;
+#X connect 29 0 9 0;
+#X connect 30 0 5 0;
+#X connect 31 0 14 0;
+#X connect 32 0 12 0;
+#X connect 32 0 15 0;
+#X connect 33 0 13 0;
 #X restore 1119 539 pd sync-move-gui;
 #X obj 614 508 r \$0-smooth;
 #X obj 624 538 s \$0-fade-out;
@@ -2444,120 +2444,128 @@ nombres de las tablas y asi los granos pueden leer de ellas;
 #X connect 12 0 14 0;
 #X connect 13 0 12 1;
 #X restore 1172 105 pd length-sync;
+#X msg 731 17 bang;
+#X obj 285 305 r \$0-state;
+#X obj 285 330 outlet;
+#X obj 300 29 inlet;
+#X obj 942 176 cnv 15 168 294 empty empty empty 20 12 0 14 -33289 -66577
+0;
+#X obj 948 182 cnv 15 156 282 empty empty empty 20 12 0 14 -253816
+-66577 0;
+#X obj 953 262 cnv 2 145 2 empty \$0-bar empty 20 12 0 14 -33289 -1
+0;
+#X obj 953 311 nbx 3 15 0 100 0 0 \$0-stereo-amount-s \$0-stereo-amount-r
+stereo 0 -8 0 10 -33289 -253816 -33289 0 256;
+#X obj 1047 438 nbx 3 15 -100 12 0 0 \$0-out-s \$0-out-r gain 0 -8
+0 10 -33289 -253816 -33289 0 256;
+#X obj 953 281 nbx 3 15 0 100 0 0 \$0-smear-s \$0-smear-r smear 0 -8
+0 10 -33289 -253816 -33289 0 256;
+#X obj 1087 443 cnv 13 10 6 empty \$0-text dB 1 2 0 10 -253816 -33289
+0;
+#X obj 1010 311 nbx 3 15 0 100 0 0 \$0-feedback-s \$0-feedback-r feedback
+0 -8 0 10 -33289 -253816 -33289 0 256;
+#X obj 953 242 nbx 3 15 0 100 0 0 \$0-grain-chance-s \$0-grain-chance-r
+chance 0 -8 0 10 -33289 -253816 -33289 100 256;
+#X obj 994 247 cnv 13 10 6 empty \$0-text % 1 2 0 10 -253816 -33289
+0;
+#X obj 977 185 tgl 10 0 \$0-rate-sync-s \$0-rate-sync-r sync 15 4 0
+10 -253816 -33289 -33289 0 1;
+#X obj 953 445 nbx 3 14 -36 36 0 0 \$0-note4-pitch-s \$0-note4-pitch-r
+empty 0 -8 0 10 -33289 -253816 -33289 0 256;
+#X obj 953 430 tgl 10 0 \$0-note4-tog-s \$0-note4-tog-r empty 15 4
+0 10 -253816 -33289 -33289 0 1;
+#X obj 971 430 hsl 16 10 0 100 0 0 \$0-note4-vel-s \$0-note4-vel-r
+empty -2 -8 0 10 -33289 -253816 -33289 0 1;
+#X obj 999 445 nbx 3 14 -36 36 0 0 \$0-note5-pitch-s \$0-note5-pitch-r
+empty 0 -8 0 10 -33289 -253816 -33289 0 256;
+#X obj 999 430 tgl 10 0 \$0-note5-tog-s \$0-note5-tog-r empty 15 4
+0 10 -253816 -33289 -33289 0 1;
+#X obj 1017 430 hsl 16 10 0 100 0 0 \$0-note5-vel-s \$0-note5-vel-r
+empty -2 -8 0 10 -33289 -253816 -33289 0 1;
+#X obj 953 406 nbx 3 14 -36 36 0 0 \$0-note2-pitch-s \$0-note2-pitch-r
+empty 0 -8 0 10 -33289 -253816 -33289 0 256;
+#X obj 953 391 tgl 10 0 \$0-note2-tog-s \$0-note2-tog-r empty 15 4
+0 10 -253816 -33289 -33289 0 1;
+#X obj 971 391 hsl 16 10 0 100 0 0 \$0-note2-vel-s \$0-note2-vel-r
+empty -2 -8 0 10 -33289 -253816 -33289 0 1;
+#X obj 999 406 nbx 3 14 -36 36 0 0 \$0-note3-pitch-s \$0-note3-pitch-r
+empty 0 -8 0 10 -33289 -253816 -33289 0 256;
+#X obj 999 391 tgl 10 0 \$0-note3-tog-s \$0-note3-tog-r empty 15 4
+0 10 -253816 -33289 -33289 0 1;
+#X obj 1017 391 hsl 16 10 0 100 0 0 \$0-note3-vel-s \$0-note3-vel-r
+empty -2 -8 0 10 -33289 -253816 -33289 0 1;
+#X obj 953 367 nbx 3 14 -36 36 0 0 \$0-note0-pitch-s \$0-note0-pitch-r
+empty 0 -8 0 10 -33289 -253816 -33289 0 256;
+#X obj 953 352 tgl 10 0 \$0-note0-tog-s \$0-note0-tog-r empty 15 4
+0 10 -253816 -33289 -33289 1 1;
+#X obj 971 352 hsl 16 10 0 100 0 0 \$0-note0-vel-s \$0-note0-vel-r
+empty -2 -8 0 10 -33289 -253816 -33289 1500 1;
+#X obj 999 367 nbx 3 14 -36 36 0 0 \$0-note1-pitch-s \$0-note1-pitch-r
+empty 0 -8 0 10 -33289 -253816 -33289 0 256;
+#X obj 999 352 tgl 10 0 \$0-note1-tog-s \$0-note1-tog-r empty 15 4
+0 10 -253816 -33289 -33289 0 1;
+#X obj 1017 352 hsl 16 10 0 100 0 0 \$0-note1-vel-s \$0-note1-vel-r
+empty -2 -8 0 10 -33289 -253816 -33289 0 1;
+#X obj 1037 185 tgl 10 0 \$0-length-sync-s \$0-length-sync-r sync 15
+4 0 10 -253816 -33289 -33289 0 1;
+#X obj 953 331 cnv 2 145 2 empty \$0-bar empty 20 12 0 14 -33289 -1
+0;
+#X obj 1010 281 nbx 4 15 -600 600 0 0 \$0-offset-pitch-s \$0-offset-pitch-r
+detune 0 -8 0 10 -33289 -253816 -33289 0 256;
+#X obj 1072 283 vsl 10 40 0 100 0 0 \$0-drywet-s \$0-drywet-r dry/wet
+-15 -10 0 10 -33289 -253816 -33289 3900 1;
+#N canvas 0 50 450 250 (subpatch) 0;
+#X array \$0-win 128 float 4;
+#X coords 0 1 127 0 52 30 1 0 0;
+#X restore 1047 366 graph;
+#X obj 1047 350 cnv 14 55 14 empty \$0-text empty 20 12 0 14 -253816
+-1 0;
+#X obj 1047 338 hradio 10 1 0 4 \$0-window-sel-s \$0-window-sel-r hann
+0 17 0 10 -253816 -33289 -33289 1;
+#X obj 1018 230 hradio 10 1 0 3 \$0-grain-dir-s \$0-grain-dir-r forward
+33 4 0 10 -253816 -33289 -33289 0;
+#X obj 1047 401 tgl 10 0 \$0-smooth-s \$0-smooth-r smooth 15 4 0 10
+-253816 -33289 -33289 0 1;
+#X obj 1047 417 cnv 2 51 2 empty \$0-bar empty 20 12 0 14 -33289 -1
+0;
+#X obj 1018 246 bng 10 250 50 0 \$0-trigger-s \$0-trigger-r trigger
+15 4 0 10 -253816 -33289 -33289;
+#X obj 962 213 tgl 10 0 \$0-rate-tog-s \$0-rate-tog-r empty 15 4 0
+10 -253816 -33289 -33289 1 1;
+#X obj 1040 338 cnv 2 2 121 empty \$0-bar empty 20 12 0 14 -33289 -1
+0;
+#X obj 952 340 cnv 10 30 6 empty \$0-text voices: 1 2 0 10 -253816
+-33289 0;
+#X obj 977 210 nbx 3 15 1 1999 0 0 \$0-grain-rate-s \$0-grain-rate-r
+rate 0 -8 0 10 -33289 -253816 -33289 100 256;
+#X obj 1016 215 cnv 13 10 6 empty \$0-grain-rate-label ms 1 2 0 10
+-253816 -33289 0;
+#X obj 1037 210 nbx 3 15 1 1999 0 0 \$0-grain-duration-s \$0-grain-duration-r
+length 0 -8 0 10 -33289 -253816 -33289 300 256;
+#X obj 1076 215 cnv 13 10 6 empty \$0-grain-duration-label ms 1 2 0
+10 -253816 -33289 0;
+#X obj 994 286 cnv 13 10 6 empty \$0-text % 1 2 0 10 -253816 -33289
+0;
+#X obj 994 316 cnv 13 10 6 empty \$0-text % 1 2 0 10 -253816 -33289
+0;
+#X obj 1051 316 cnv 13 10 6 empty \$0-text % 1 2 0 10 -253816 -33289
+0;
+#X obj 20 20 nbx 1 15 1 9 0 0 \$0-rate-num-s \$0-rate-num-r rate 0
+-8 0 10 -33289 -253816 -33289 1 256;
+#X obj 20 20 nbx 1 15 1 9 0 0 \$0-rate-den-s \$0-rate-den-r empty 0
+-8 0 10 -33289 -253816 -33289 1 256;
+#X obj 20 20 nbx 1 15 1 9 0 0 \$0-length-num-s \$0-length-num-r length
+0 -8 0 10 -33289 -253816 -33289 1 256;
+#X obj 20 20 nbx 1 15 1 9 0 0 \$0-length-den-s \$0-length-den-r empty
+0 -8 0 10 -33289 -253816 -33289 1 256;
 #X obj 174 29 inlet~;
 #X obj 227 29 inlet~;
 #X obj 12 330 outlet~;
 #X obj 212 330 outlet~;
-#X obj 948 182 cnv 15 154 278 empty empty empty 20 12 0 14 -262144
--66577 0;
-#X obj 952 262 cnv 2 145 1 empty \$0-bar empty 20 12 0 14 -1 -1 0;
-#X obj 953 310 nbx 3 15 0 100 0 0 \$0-stereo-amount-s \$0-stereo-amount-r
-stereo 0 -8 0 10 -1 -262144 -1 0 256;
-#X obj 1046 434 nbx 3 15 -100 12 0 0 \$0-out-s \$0-out-r gain 0 -8
-0 10 -1 -262144 -1 0 256;
-#X obj 953 280 nbx 3 15 0 100 0 0 \$0-smear-s \$0-smear-r smear 0 -8
-0 10 -1 -262144 -1 0 256;
-#X obj 994 285 cnv 13 10 6 empty \$0-text % 1 2 0 10 -262144 -1 0;
-#X obj 994 315 cnv 15 10 6 empty \$0-text % 1 2 0 10 -262144 -1 0;
-#X obj 1086 439 cnv 13 10 6 empty \$0-text dB 1 2 0 10 -262144 -1 0
-;
-#X obj 1010 310 nbx 3 15 0 100 0 0 \$0-feedback-s \$0-feedback-r feedback
-0 -8 0 10 -1 -262144 -1 0 256;
-#X obj 1051 315 cnv 13 10 6 empty \$0-text % 1 2 0 10 -262144 -1 0
-;
-#X obj 953 242 nbx 3 15 0 100 0 0 \$0-grain-chance-s \$0-grain-chance-r
-chance 0 -8 0 10 -1 -262144 -1 100 256;
-#X obj 994 247 cnv 13 10 6 empty \$0-text % 1 2 0 10 -262144 -1 0;
-#X obj 977 165 tgl 10 0 \$0-rate-sync-s \$0-rate-sync-r sync 15 4 0
-10 -262144 -1 -1 0 1;
-#X obj 953 443 nbx 3 14 -36 36 0 0 \$0-note4-pitch-s \$0-note4-pitch-r
-empty 0 -8 0 10 -1 -262144 -1 0 256;
-#X obj 953 428 tgl 10 0 \$0-note4-tog-s \$0-note4-tog-r empty 15 4
-0 10 -262144 -1 -1 0 1;
-#X obj 971 428 hsl 16 10 0 100 0 0 \$0-note4-vel-s \$0-note4-vel-r
-empty -2 -8 0 10 -1 -262144 -1 0 1;
-#X obj 999 443 nbx 3 14 -36 36 0 0 \$0-note5-pitch-s \$0-note5-pitch-r
-empty 0 -8 0 10 -1 -262144 -1 0 256;
-#X obj 999 428 tgl 10 0 \$0-note5-tog-s \$0-note5-tog-r empty 15 4
-0 10 -262144 -1 -1 0 1;
-#X obj 1017 428 hsl 16 10 0 100 0 0 \$0-note5-vel-s \$0-note5-vel-r
-empty -2 -8 0 10 -1 -262144 -1 0 1;
-#X obj 953 404 nbx 3 14 -36 36 0 0 \$0-note2-pitch-s \$0-note2-pitch-r
-empty 0 -8 0 10 -1 -262144 -1 0 256;
-#X obj 953 389 tgl 10 0 \$0-note2-tog-s \$0-note2-tog-r empty 15 4
-0 10 -262144 -1 -1 0 1;
-#X obj 971 389 hsl 16 10 0 100 0 0 \$0-note2-vel-s \$0-note2-vel-r
-empty -2 -8 0 10 -1 -262144 -1 0 1;
-#X obj 999 404 nbx 3 14 -36 36 0 0 \$0-note3-pitch-s \$0-note3-pitch-r
-empty 0 -8 0 10 -1 -262144 -1 0 256;
-#X obj 999 389 tgl 10 0 \$0-note3-tog-s \$0-note3-tog-r empty 15 4
-0 10 -262144 -1 -1 0 1;
-#X obj 1017 389 hsl 16 10 0 100 0 0 \$0-note3-vel-s \$0-note3-vel-r
-empty -2 -8 0 10 -1 -262144 -1 0 1;
-#X obj 953 365 nbx 3 14 -36 36 0 0 \$0-note0-pitch-s \$0-note0-pitch-r
-empty 0 -8 0 10 -1 -262144 -1 0 256;
-#X obj 953 350 tgl 10 0 \$0-note0-tog-s \$0-note0-tog-r empty 15 4
-0 10 -262144 -1 -1 1 1;
-#X obj 971 350 hsl 16 10 0 100 0 0 \$0-note0-vel-s \$0-note0-vel-r
-empty -2 -8 0 10 -1 -262144 -1 0 1;
-#X obj 999 365 nbx 3 14 -36 36 0 0 \$0-note1-pitch-s \$0-note1-pitch-r
-empty 0 -8 0 10 -1 -262144 -1 0 256;
-#X obj 999 350 tgl 10 0 \$0-note1-tog-s \$0-note1-tog-r empty 15 4
-0 10 -262144 -1 -1 0 1;
-#X obj 1017 350 hsl 16 10 0 100 0 0 \$0-note1-vel-s \$0-note1-vel-r
-empty -2 -8 0 10 -1 -262144 -1 0 1;
-#X obj 1037 165 tgl 10 0 \$0-length-sync-s \$0-length-sync-r sync 15
-4 0 10 -262144 -1 -1 0 1;
-#X obj 952 330 cnv 2 145 1 empty \$0-bar empty 20 12 0 14 -1 -1 0;
-#X obj 1010 280 nbx 4 15 -600 600 0 0 \$0-offset-pitch-s \$0-offset-pitch-r
-detune 0 -8 0 10 -1 -262144 -1 0 256;
-#X obj 1072 282 vsl 10 40 0 100 0 0 \$0-drywet-s \$0-drywet-r dry/wet
--15 -10 0 10 -1 -262144 -1 3900 1;
-#N canvas 0 50 450 250 (subpatch) 0;
-#X array \$0-win 128 float 4;
-#X coords 0 1 127 0 52 30 1 0 0;
-#X restore 1046 364 graph;
-#X obj 1046 348 cnv 14 55 14 empty \$0-text empty 20 12 0 14 -262144
--1 0;
-#X obj 1046 336 hradio 10 1 0 4 \$0-window-sel-s \$0-window-sel-r hann
-0 17 0 10 -262144 -1 -1 1;
-#X obj 1018 230 hradio 10 1 0 3 \$0-grain-dir-s \$0-grain-dir-r forward
-33 4 0 10 -262144 -1 -1 0;
-#X obj 1046 399 tgl 10 0 \$0-smooth-s \$0-smooth-r smooth 15 4 0 10
--262144 -1 -1 0 1;
-#X obj 1045 414 cnv 2 53 1 empty \$0-bar empty 20 12 0 14 -1 -1 0;
-#X obj 1018 246 bng 10 250 50 0 \$0-trigger-s \$0-trigger-r trigger
-15 4 0 10 -262144 -1 -1;
-#X obj 962 213 tgl 10 0 \$0-rate-tog-s \$0-rate-tog-r empty 15 4 0
-10 -262144 -1 -1 1 1;
-#X obj 1040 335 cnv 2 1 122 empty \$0-bar empty 20 12 0 14 -1 -1 0
-;
-#X obj 952 338 cnv 10 30 6 empty \$0-text voices: 1 2 0 10 -262144
--1 0;
-#X msg 731 17 bang;
-#X obj 285 305 r \$0-state;
-#X obj 285 330 outlet;
-#X obj 977 210 nbx 3 15 1 1999 0 0 \$0-grain-rate-s \$0-grain-rate-r
-rate 0 -8 0 10 -1 -262144 -1 100 256;
-#X obj 1016 215 cnv 13 10 6 empty \$0-grain-rate-label ms 1 2 0 10
--262144 -1 0;
-#X obj 1037 210 nbx 3 15 1 1999 0 0 \$0-grain-duration-s \$0-grain-duration-r
-length 0 -8 0 10 -1 -262144 -1 300 256;
-#X obj 1076 215 cnv 13 10 6 empty \$0-grain-duration-label ms 1 2 0
-10 -262144 -1 0;
-#X obj 20 20 nbx 1 15 1 9 0 0 \$0-rate-num-s \$0-rate-num-r rate 0
--8 0 10 -1 -262144 -1 1 256;
-#X obj 20 20 nbx 1 15 1 9 0 0 \$0-rate-den-s \$0-rate-den-r empty 0
--8 0 10 -1 -262144 -1 1 256;
-#X obj 20 20 nbx 1 15 1 9 0 0 \$0-length-num-s \$0-length-num-r length
-0 -8 0 10 -1 -262144 -1 1 256;
-#X obj 20 20 nbx 1 15 1 9 0 0 \$0-length-den-s \$0-length-den-r empty
-0 -8 0 10 -1 -262144 -1 1 256;
-#X obj 300 29 inlet;
-#X connect 5 0 91 0;
+#X connect 5 0 149 0;
 #X connect 6 0 5 1;
 #X connect 6 0 7 1;
-#X connect 7 0 92 0;
+#X connect 7 0 150 0;
 #X connect 8 0 13 0;
 #X connect 11 0 14 1;
 #X connect 12 0 13 0;
@@ -2582,7 +2590,7 @@ length 0 -8 0 10 -1 -262144 -1 300 256;
 #X connect 32 0 19 0;
 #X connect 33 0 35 0;
 #X connect 34 0 71 0;
-#X connect 34 0 138 0;
+#X connect 34 0 89 0;
 #X connect 35 0 23 0;
 #X connect 35 0 24 1;
 #X connect 35 0 29 1;
@@ -2624,7 +2632,7 @@ length 0 -8 0 10 -1 -262144 -1 300 256;
 #X connect 72 1 71 0;
 #X connect 73 0 24 0;
 #X connect 73 0 30 0;
-#X connect 73 0 138 0;
+#X connect 73 0 89 0;
 #X connect 74 0 75 0;
 #X connect 75 0 76 0;
 #X connect 75 0 79 0;
@@ -2643,13 +2651,13 @@ length 0 -8 0 10 -1 -262144 -1 300 256;
 #X connect 86 0 84 1;
 #X connect 86 0 83 1;
 #X connect 87 0 11 0;
-#X connect 89 0 83 0;
-#X connect 89 0 15 0;
-#X connect 90 0 15 1;
-#X connect 90 0 84 0;
-#X connect 138 0 69 0;
-#X connect 138 0 73 0;
-#X connect 138 0 22 0;
-#X connect 139 0 140 0;
-#X connect 149 0 9 0;
-#X coords 0 -1 1 1 156 284 2 947 179;
+#X connect 89 0 69 0;
+#X connect 89 0 73 0;
+#X connect 89 0 22 0;
+#X connect 90 0 91 0;
+#X connect 92 0 9 0;
+#X connect 147 0 83 0;
+#X connect 147 0 15 0;
+#X connect 148 0 15 1;
+#X connect 148 0 84 0;
+#X coords 0 -1 1 1 168 300 2 942 173;
