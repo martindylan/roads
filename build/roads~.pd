@@ -2813,10 +2813,10 @@ drywet 100 \, gain -13 \, rate 2 \, rate tog 1 \, length 300 \, chance
 0 -8 0 10 -33289 -253816 -33289 1 256;
 #X obj 1037 20 nbx 1 15 1 9 0 0 \$0-length-den-s \$0-length-den-r empty
 0 -8 0 10 -33289 -253816 -33289 1 256;
-#X obj 174 29 inlet~;
-#X obj 227 29 inlet~;
-#X obj 12 330 outlet~;
-#X obj 212 330 outlet~;
+#X obj 174 29 adc~ 1;
+#X obj 227 29 adc~ 2;
+#X obj 12 330 dac~ 1;
+#X obj 212 330 dac~ 2;
 #X connect 5 0 155 0;
 #X connect 6 0 5 1;
 #X connect 6 0 7 1;
