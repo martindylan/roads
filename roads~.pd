@@ -2646,7 +2646,7 @@ length 0 -8 0 10 -33289 -253816 -33289 300 256;
 0;
 #X obj 953 464 cnv 2 146 2 empty \$0-bar empty 20 12 0 14 -33289 -1
 0;
-#N canvas 2 52 1362 692 presets 0;
+#N canvas 685 52 679 692 presets 0;
 #X obj 37 62 r \$0-preset-next;
 #X obj 12 12 r \$0-preset-prev;
 #X obj 37 87 t b b;
@@ -2688,16 +2688,16 @@ length 0 -8 0 10 -33289 -253816 -33289 300 256;
 #X msg 240 297 953 471;
 #X msg 180 297 1093 183;
 #X msg 320 287 1093 183;
-#N canvas 685 52 679 692 reverse_shimmer 0;
+#N canvas 913 52 451 692 reverse_shimmer 0;
 #X obj 12 12 inlet;
 #X obj 12 202 outlet;
 #X obj 22 177 s \$0-preset-label;
-#X msg 22 152 label reverse_shimmer;
-#X msg 12 37 smear 15 \, detune 15 \, stereo 50 \, feedback 25 \, drywet
+#X msg 22 152 label synced_reverse_shine;
+#X msg 12 37 smear 15 \, detune 15 \, stereo 50 \, feedback 98 \, drywet
 33.3333 \, gain 3 \, rate 100 \, rate tog 1 \, length 300 \, chance
 75 \, dir 1 \, rate sync 1 \, rate num 1 \, rate den 2 \, length sync
 1 \, length num 1 \, length den 1 \, window shape 3 \, window smooth
-1 \, 0 1 \, 0 gain 100 \, 0 transpose 0 \, 1 1 \, 1 gain 20 \, 1 transpose
+1 \, 0 1 \, 0 gain 100 \, 0 transpose 0 \, 1 1 \, 1 gain 66 \, 1 transpose
 12 \, 2 0 \, 2 gain 0 \, 2 transpose 0 \, 3 0 \, 3 gain 0 \, 3 transpose
 0 \, 4 0 \, 4 gain 0 \, 4 transpose 0 \, 5 0 \, 5 gain 0 \, 5 transpose
 0 \,;
@@ -2742,12 +2742,12 @@ gain 0 \, 5 transpose 0 \,;
 #X connect 4 0 1 0;
 #X connect 4 0 3 0;
 #X restore 64 392 pd rhythmic;
-#N canvas 685 52 679 692 sewer 0;
+#N canvas 913 52 451 692 sewer 0;
 #X obj 12 12 inlet;
 #X obj 12 217 outlet;
 #X obj 22 192 s \$0-preset-label;
 #X msg 22 167 label sewer;
-#X msg 12 37 smear 100 \, detune -9 \, stereo 100 \, feedback 95 \,
+#X msg 12 37 smear 100 \, detune -9 \, stereo 100 \, feedback 90 \,
 drywet 100 \, gain -13 \, rate 2 \, rate tog 1 \, length 300 \, chance
 8 \, dir 2 \, rate sync 0 \, rate num 1 \, rate den 1 \, length sync
 0 \, length num 1 \, length den 1 \, window shape 2 \, window smooth
