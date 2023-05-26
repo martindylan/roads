@@ -1,4 +1,4 @@
-#N canvas 2 52 1362 692 12;
+#N canvas 913 77 451 670 12;
 #N canvas 686 35 677 708 adsr 0;
 #X msg 292 72 legato \$1;
 #X msg 222 72 rel \$1;
