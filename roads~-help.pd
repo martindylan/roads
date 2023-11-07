@@ -1,0 +1,121 @@
+#N canvas -8 -8 683 685 12;
+#X obj 12 374 cnv 15 520 238 empty empty empty 20 12 0 14 #c4c4fc #404040
+0;
+#X obj 12 752 cnv 15 603 138 empty empty empty 20 12 0 14 #c4c4fc #404040
+0;
+#X obj 12 123 cnv 15 528 240 empty empty empty 20 12 0 14 #c4c4fc #404040
+0;
+#X obj 704 36 cnv 15 135 39 empty empty empty 20 12 0 14 #c4fcfc #404040
+0;
+#X text 701 8 OUTLET 0:;
+#X obj 714 46 sig~;
+#X obj 850 36 cnv 15 135 39 empty empty empty 20 12 0 14 #c4fcfc #404040
+0;
+#X obj 860 46 sig~;
+#X text 847 8 OUTLET 1:;
+#X obj 704 123 cnv 15 499 111 empty empty empty 20 12 0 14 #c4fcfc
+#404040 0;
+#X text 701 95 OUTLET 2:;
+#X msg 714 139 set foo;
+#X obj 12 901 cnv 15 497 39 empty empty empty 20 12 0 14 #c4c4fc #404040
+0;
+#X msg 22 911 state \$1;
+#X obj 22 133 bang;
+#X text 89 911 escribir un mensaje con el estado actual de la abstracción
+;
+#X text 61 133 enciende un solo grano;
+#X text 111 187 activa o desactiva el encendido automático de los
+granos en base a la frecuencia dada (distinto de cero y 0 respectivamente)
+;
+#X obj 12 36 cnv 15 134 39 empty empty empty 20 12 0 14 #c4c4fc #404040
+0;
+#X obj 22 46 sig~;
+#X obj 168 36 cnv 15 134 39 empty empty empty 20 12 0 14 #c4c4fc #404040
+0;
+#X obj 178 46 sig~;
+#X obj 704 281 cnv 15 275 64 empty empty empty 20 12 0 14 #c4fcc4 #404040
+0;
+#X text 703 253 ACERCA DE:;
+#X text 754 46 canal izq.;
+#X text 899 46 canal der.;
+#X obj 12 981 loadbang;
+#X msg 12 1006 0;
+#X obj 12 1031 switch~;
+#X text 76 268 determina si los granos leen de la tabla en el orden
+original \, en orden inverso o ambos escogiendo aleatoriamente para
+cada nuevo grano (0 a 2 respectivamente);
+#X text 9 8 INLET 0:;
+#X text 165 8 INLET 1:;
+#X text 9 95 INLET 2:;
+#X text 712 290 efecto de granulación en tiempo real \; dylan martin
+;
+#X msg 22 242 length \$1;
+#X text 62 46 canal izq.;
+#X text 218 46 canal der.;
+#X msg 22 162 rate \$1;
+#X msg 22 195 rate tog \$1;
+#X msg 22 275 dir \$1;
+#X msg 22 329 chance \$1;
+#X text 97 322 posibilidad que cada grano tiene de ser reproducido
+(0 a 100% como porcentaje);
+#X text 775 132 donde foo representa una lista de todos los parámetros
+correctamente formateados para ser enviados de vuelta a la abstracción
+\, en otras palabras \, conectar esta salida a un mensaje y cuando
+la abstracción reciba el mensaje [state( \, se guardará el estado
+actual de la abstracción (tener en cuenta que el mensaje se vaciará
+antes de escribir en él);
+#X msg 22 390 smear \$1;
+#X text 89 383 "nublar" la textura granular desacomodando cada grano
+en el tiempo (0 a 100% como porcentaje);
+#X msg 22 430 detune \$1;
+#X text 97 423 rango dentro del cual la altura de cada grano es aleatoriamente
+determinada (en cents);
+#X msg 22 470 stereo \$1;
+#X text 97 463 rango dentro del cual la espacialización estéreo de
+cada grano es aleatoriamente determinada (0 a 100% como porcentaje)
+;
+#X msg 22 524 feedback \$1;
+#X msg 22 564 drywet \$1;
+#X text 97 557 relación entre la señal limpia y la señal procesada
+(0 a 100% como porcentaje \, donde 0% resulta exclusivamente en la
+señal limpia y 100% exclusivamente en la señal procesada);
+#X obj 12 623 cnv 15 568 118 empty empty empty 20 12 0 14 #c4c4fc #404040
+0;
+#X msg 22 639 window shape \$1;
+#X text 137 632 forma de la ventana (0 a 3: straight \, hanning \,
+up y down respectivamente;
+#X msg 22 679 window smooth \$1;
+#X text 111 517 cantidad de la señal procesada que es retroalimentada
+a la entrada del dispositivo (0 a 100% como porcentaje);
+#X text 81 162 frecuencia con la que se encenderán los granos (en
+ms);
+#X text 97 242 duración de los granos (en ms);
+#X text 146 672 suaviza o no el comienzo y el fin de la ventana (distinto
+de cero y 0 respectivamente);
+#X msg 22 712 gain \$1;
+#X text 82 712 ganancia de salida (en dB);
+#X text 20 761 ***donde N representa un número de 0 a 5 (inclusive)***
+;
+#X msg 22 791 N \$1;
+#X text 61 784 encender o apagar la voz (distinto de cero y 0 respectivamente)
+;
+#X msg 22 824 N gain \$1;
+#X text 96 824 ganancia de la voz (0 a 100% como porcentaje);
+#X msg 22 857 N transpose \$1;
+#X text 131 850 transposición de la voz en relación a la altura de
+origen (en semitonos);
+#X connect 14 0 37 0;
+#X connect 26 0 27 0;
+#X connect 27 0 28 0;
+#X connect 34 0 39 0;
+#X connect 37 0 38 0;
+#X connect 38 0 34 0;
+#X connect 39 0 40 0;
+#X connect 43 0 45 0;
+#X connect 45 0 47 0;
+#X connect 47 0 49 0;
+#X connect 49 0 50 0;
+#X connect 53 0 55 0;
+#X connect 55 0 60 0;
+#X connect 63 0 65 0;
+#X connect 65 0 67 0;
