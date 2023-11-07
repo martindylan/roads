@@ -1,4 +1,4 @@
-#N canvas 913 77 451 670 12;
+#N canvas 913 77 1366 685 12;
 #N canvas 686 35 677 708 adsr 0;
 #X msg 292 72 legato \$1;
 #X msg 222 72 rel \$1;
@@ -2532,109 +2532,109 @@ nombres de las tablas y asi los granos pueden leer de ellas;
 #X obj 285 305 r \$0-state;
 #X obj 285 330 outlet;
 #X obj 300 29 inlet;
-#X obj 942 176 cnv 15 168 316 empty empty empty 20 12 0 14 -33289 -66577
-0;
-#X obj 948 182 cnv 15 156 304 empty empty empty 20 12 0 14 -253816
--66577 0;
-#X obj 953 262 cnv 2 146 2 empty \$0-bar empty 20 12 0 14 -33289 -1
+#X obj 942 176 cnv 15 168 316 empty empty empty 20 12 0 14 #202020
+#404040 0;
+#X obj 948 182 cnv 15 156 304 empty empty empty 20 12 0 14 #f4f4dc
+#404040 0;
+#X obj 953 262 cnv 2 146 2 empty \$0-bar empty 20 12 0 14 #202020 #000000
 0;
 #X obj 953 311 nbx 3 15 0 100 0 0 \$0-stereo-amount-s \$0-stereo-amount-r
-stereo 0 -8 0 10 -33289 -253816 -33289 0 256;
+stereo 0 -8 0 10 #202020 #f4f4dc #202020 0 256;
 #X obj 1047 438 nbx 3 15 -100 12 0 0 \$0-out-s \$0-out-r gain 0 -8
-0 10 -33289 -253816 -33289 0 256;
+0 10 #202020 #f4f4dc #202020 0 256;
 #X obj 953 281 nbx 3 15 0 100 0 0 \$0-smear-s \$0-smear-r smear 0 -8
-0 10 -33289 -253816 -33289 0 256;
-#X obj 1087 443 cnv 13 10 6 empty \$0-text dB 1 2 0 10 -253816 -33289
+0 10 #202020 #f4f4dc #202020 0 256;
+#X obj 1087 443 cnv 13 10 6 empty \$0-text dB 1 2 0 10 #f4f4dc #202020
 0;
 #X obj 1010 311 nbx 3 15 0 100 0 0 \$0-feedback-s \$0-feedback-r feedback
-0 -8 0 10 -33289 -253816 -33289 0 256;
+0 -8 0 10 #202020 #f4f4dc #202020 0 256;
 #X obj 953 242 nbx 3 15 0 100 0 0 \$0-grain-chance-s \$0-grain-chance-r
-chance 0 -8 0 10 -33289 -253816 -33289 100 256;
-#X obj 994 247 cnv 13 10 6 empty \$0-text % 1 2 0 10 -253816 -33289
+chance 0 -8 0 10 #202020 #f4f4dc #202020 0 256;
+#X obj 994 247 cnv 13 10 6 empty \$0-text % 1 2 0 10 #f4f4dc #202020
 0;
-#X obj 977 185 tgl 10 0 \$0-rate-sync-s \$0-rate-sync-r sync 15 4 0
-10 -253816 -33289 -33289 0 1;
+#X obj 977 155 tgl 10 0 \$0-rate-sync-s \$0-rate-sync-r sync 15 4 0
+10 #f4f4dc #202020 #202020 0 1;
 #X obj 953 445 nbx 3 14 -36 36 0 0 \$0-note4-pitch-s \$0-note4-pitch-r
-empty 0 -8 0 10 -33289 -253816 -33289 0 256;
+empty 0 -8 0 10 #202020 #f4f4dc #202020 0 256;
 #X obj 953 430 tgl 10 0 \$0-note4-tog-s \$0-note4-tog-r empty 15 4
-0 10 -253816 -33289 -33289 0 1;
+0 10 #f4f4dc #202020 #202020 0 1;
 #X obj 971 430 hsl 16 10 0 100 0 0 \$0-note4-vel-s \$0-note4-vel-r
-empty -2 -8 0 10 -33289 -253816 -33289 0 1;
+empty -2 -8 0 10 #202020 #f4f4dc #202020 0 1;
 #X obj 999 445 nbx 3 14 -36 36 0 0 \$0-note5-pitch-s \$0-note5-pitch-r
-empty 0 -8 0 10 -33289 -253816 -33289 0 256;
+empty 0 -8 0 10 #202020 #f4f4dc #202020 0 256;
 #X obj 999 430 tgl 10 0 \$0-note5-tog-s \$0-note5-tog-r empty 15 4
-0 10 -253816 -33289 -33289 0 1;
+0 10 #f4f4dc #202020 #202020 0 1;
 #X obj 1017 430 hsl 16 10 0 100 0 0 \$0-note5-vel-s \$0-note5-vel-r
-empty -2 -8 0 10 -33289 -253816 -33289 0 1;
+empty -2 -8 0 10 #202020 #f4f4dc #202020 0 1;
 #X obj 953 406 nbx 3 14 -36 36 0 0 \$0-note2-pitch-s \$0-note2-pitch-r
-empty 0 -8 0 10 -33289 -253816 -33289 0 256;
+empty 0 -8 0 10 #202020 #f4f4dc #202020 0 256;
 #X obj 953 391 tgl 10 0 \$0-note2-tog-s \$0-note2-tog-r empty 15 4
-0 10 -253816 -33289 -33289 0 1;
+0 10 #f4f4dc #202020 #202020 0 1;
 #X obj 971 391 hsl 16 10 0 100 0 0 \$0-note2-vel-s \$0-note2-vel-r
-empty -2 -8 0 10 -33289 -253816 -33289 0 1;
+empty -2 -8 0 10 #202020 #f4f4dc #202020 0 1;
 #X obj 999 406 nbx 3 14 -36 36 0 0 \$0-note3-pitch-s \$0-note3-pitch-r
-empty 0 -8 0 10 -33289 -253816 -33289 0 256;
+empty 0 -8 0 10 #202020 #f4f4dc #202020 0 256;
 #X obj 999 391 tgl 10 0 \$0-note3-tog-s \$0-note3-tog-r empty 15 4
-0 10 -253816 -33289 -33289 0 1;
+0 10 #f4f4dc #202020 #202020 0 1;
 #X obj 1017 391 hsl 16 10 0 100 0 0 \$0-note3-vel-s \$0-note3-vel-r
-empty -2 -8 0 10 -33289 -253816 -33289 0 1;
+empty -2 -8 0 10 #202020 #f4f4dc #202020 0 1;
 #X obj 953 367 nbx 3 14 -36 36 0 0 \$0-note0-pitch-s \$0-note0-pitch-r
-empty 0 -8 0 10 -33289 -253816 -33289 0 256;
+empty 0 -8 0 10 #202020 #f4f4dc #202020 0 256;
 #X obj 953 352 tgl 10 0 \$0-note0-tog-s \$0-note0-tog-r empty 15 4
-0 10 -253816 -33289 -33289 1 1;
+0 10 #f4f4dc #202020 #202020 0 1;
 #X obj 971 352 hsl 16 10 0 100 0 0 \$0-note0-vel-s \$0-note0-vel-r
-empty -2 -8 0 10 -33289 -253816 -33289 1500 1;
+empty -2 -8 0 10 #202020 #f4f4dc #202020 0 1;
 #X obj 999 367 nbx 3 14 -36 36 0 0 \$0-note1-pitch-s \$0-note1-pitch-r
-empty 0 -8 0 10 -33289 -253816 -33289 0 256;
+empty 0 -8 0 10 #202020 #f4f4dc #202020 0 256;
 #X obj 999 352 tgl 10 0 \$0-note1-tog-s \$0-note1-tog-r empty 15 4
-0 10 -253816 -33289 -33289 0 1;
+0 10 #f4f4dc #202020 #202020 0 1;
 #X obj 1017 352 hsl 16 10 0 100 0 0 \$0-note1-vel-s \$0-note1-vel-r
-empty -2 -8 0 10 -33289 -253816 -33289 0 1;
-#X obj 1037 185 tgl 10 0 \$0-length-sync-s \$0-length-sync-r sync 15
-4 0 10 -253816 -33289 -33289 0 1;
-#X obj 953 331 cnv 2 146 2 empty \$0-bar empty 20 12 0 14 -33289 -1
+empty -2 -8 0 10 #202020 #f4f4dc #202020 0 1;
+#X obj 1037 155 tgl 10 0 \$0-length-sync-s \$0-length-sync-r sync 15
+4 0 10 #f4f4dc #202020 #202020 0 1;
+#X obj 953 331 cnv 2 146 2 empty \$0-bar empty 20 12 0 14 #202020 #000000
 0;
 #X obj 1010 281 nbx 4 15 -600 600 0 0 \$0-offset-pitch-s \$0-offset-pitch-r
-detune 0 -8 0 10 -33289 -253816 -33289 0 256;
+detune 0 -8 0 10 #202020 #f4f4dc #202020 0 256;
 #X obj 1072 283 vsl 10 40 0 100 0 0 \$0-drywet-s \$0-drywet-r dry/wet
--15 -10 0 10 -33289 -253816 -33289 3900 1;
+-15 -10 0 10 #202020 #f4f4dc #202020 0 1;
 #N canvas 0 50 450 250 (subpatch) 0;
 #X array \$0-win 128 float 4;
 #X coords 0 1 127 0 52 30 1 0 0;
 #X restore 1047 366 graph;
-#X obj 1047 350 cnv 14 55 14 empty \$0-text empty 20 12 0 14 -253816
--1 0;
+#X obj 1047 350 cnv 14 55 14 empty \$0-text empty 20 12 0 14 #f4f4dc
+#000000 0;
 #X obj 1047 338 hradio 10 1 0 4 \$0-window-sel-s \$0-window-sel-r hann
-0 17 0 10 -253816 -33289 -33289 1;
+0 17 0 10 #f4f4dc #202020 #202020 0;
 #X obj 1018 230 hradio 10 1 0 3 \$0-grain-dir-s \$0-grain-dir-r forward
-33 4 0 10 -253816 -33289 -33289 0;
+33 4 0 10 #f4f4dc #202020 #202020 0;
 #X obj 1047 401 tgl 10 0 \$0-smooth-s \$0-smooth-r smooth 15 4 0 10
--253816 -33289 -33289 0 1;
-#X obj 1047 417 cnv 2 52 2 empty \$0-bar empty 20 12 0 14 -33289 -1
+#f4f4dc #202020 #202020 0 1;
+#X obj 1047 417 cnv 2 52 2 empty \$0-bar empty 20 12 0 14 #202020 #000000
 0;
 #X obj 1018 246 bng 10 250 50 0 \$0-trigger empty trigger 15 4 0 10
--253816 -33289 -33289;
+#f4f4dc #202020 #202020;
 #X obj 962 213 tgl 10 0 \$0-rate-tog-s \$0-rate-tog-r empty 15 4 0
-10 -253816 -33289 -33289 1 1;
-#X obj 1040 338 cnv 2 2 121 empty \$0-bar empty 20 12 0 14 -33289 -1
-0;
-#X obj 952 340 cnv 10 30 6 empty \$0-text voices: 1 2 0 10 -253816
--33289 0;
+10 #f4f4dc #202020 #202020 0 1;
+#X obj 1040 338 cnv 2 2 121 empty \$0-bar empty 20 12 0 14 #202020
+#000000 0;
+#X obj 952 340 cnv 10 30 6 empty \$0-text voices: 1 2 0 10 #f4f4dc
+#202020 0;
 #X obj 977 210 nbx 3 15 1 1999 0 0 \$0-grain-rate-s \$0-grain-rate-r
-rate 0 -8 0 10 -33289 -253816 -33289 100 256;
+rate 0 -8 0 10 #202020 #f4f4dc #202020 0 256;
 #X obj 1016 215 cnv 13 10 6 empty \$0-grain-rate-label ms 1 2 0 10
--253816 -33289 0;
+#f4f4dc #202020 0;
 #X obj 1037 210 nbx 3 15 1 1999 0 0 \$0-grain-duration-s \$0-grain-duration-r
-length 0 -8 0 10 -33289 -253816 -33289 300 256;
+length 0 -8 0 10 #202020 #f4f4dc #202020 0 256;
 #X obj 1076 215 cnv 13 10 6 empty \$0-grain-duration-label ms 1 2 0
-10 -253816 -33289 0;
-#X obj 994 286 cnv 13 10 6 empty \$0-text % 1 2 0 10 -253816 -33289
+10 #f4f4dc #202020 0;
+#X obj 994 286 cnv 13 10 6 empty \$0-text % 1 2 0 10 #f4f4dc #202020
 0;
-#X obj 994 316 cnv 13 10 6 empty \$0-text % 1 2 0 10 -253816 -33289
+#X obj 994 316 cnv 13 10 6 empty \$0-text % 1 2 0 10 #f4f4dc #202020
 0;
-#X obj 1051 316 cnv 13 10 6 empty \$0-text % 1 2 0 10 -253816 -33289
+#X obj 1051 316 cnv 13 10 6 empty \$0-text % 1 2 0 10 #f4f4dc #202020
 0;
-#X obj 953 464 cnv 2 146 2 empty \$0-bar empty 20 12 0 14 -33289 -1
+#X obj 953 464 cnv 2 146 2 empty \$0-bar empty 20 12 0 14 #202020 #000000
 0;
 #N canvas 685 52 679 692 presets 0;
 #X obj 37 62 r \$0-preset-next;
@@ -2788,21 +2788,21 @@ drywet 100 \, gain -13 \, rate 2 \, rate tog 1 \, length 300 \, chance
 #X connect 27 0 11 0;
 #X restore 349 29 pd presets;
 #X obj 983 469 cnv 15 15 15 empty \$0-preset-label default 0 7 0 10
--253816 -33289 0;
+#f4f4dc #202020 0;
 #X obj 968 471 bng 10 250 50 0 \$0-preset-next \$0-preset-next-r >
-3 5 0 10 -33289 -253816 -253816;
+3 5 0 10 #202020 #f4f4dc #f4f4dc;
 #X obj 1093 183 bng 10 250 50 0 \$0-preset-prev \$0-preset-prev-r <
-2 5 0 10 -33289 -253816 -253816;
-#X obj 1088 182 cnv 15 15 15 empty empty empty 20 12 0 14 -253816 -66577
+2 5 0 10 #202020 #f4f4dc #f4f4dc;
+#X obj 1088 182 cnv 15 15 15 empty empty empty 20 12 0 14 #f4f4dc #404040
 0;
 #X obj 977 20 nbx 1 15 1 9 0 0 \$0-rate-num-s \$0-rate-num-r rate 0
--8 0 10 -33289 -253816 -33289 1 256;
+-8 0 10 #202020 #f4f4dc #202020 0 256;
 #X obj 977 20 nbx 1 15 1 9 0 0 \$0-rate-den-s \$0-rate-den-r empty
-0 -8 0 10 -33289 -253816 -33289 1 256;
+0 -8 0 10 #202020 #f4f4dc #202020 0 256;
 #X obj 1037 20 nbx 1 15 1 9 0 0 \$0-length-num-s \$0-length-num-r length
-0 -8 0 10 -33289 -253816 -33289 1 256;
+0 -8 0 10 #202020 #f4f4dc #202020 0 256;
 #X obj 1037 20 nbx 1 15 1 9 0 0 \$0-length-den-s \$0-length-den-r empty
-0 -8 0 10 -33289 -253816 -33289 1 256;
+0 -8 0 10 #202020 #f4f4dc #202020 0 256;
 #X obj 174 29 inlet~;
 #X obj 227 29 inlet~;
 #X obj 12 330 outlet~;
