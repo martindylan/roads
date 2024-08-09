@@ -11,7 +11,7 @@ Descargar de la [última release](https://github.com/martindylan/roads/releases/
 
 - **length**: Duración de los granos (ms o subdivisión)
 
-**(rate y length pueden determinarse en ms o sincronizarse con el tempo del proyecto)*
+\**(rate y length pueden utilizar **sync** para definirse como una subdivisión del tempo actual del proyecto)*
 
 - **chance**: Probabilidad de que se emitan los granos, se recalcula para cada grano (0-100%)
 
