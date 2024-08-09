@@ -25,11 +25,15 @@ Descargar de la [última release](https://github.com/martindylan/roads/releases/
 
 **feedback**: Cantidad de la señal granulada que se vuelve a ingresar en el sistema
 
+**dry/wet**: Mezcla entre la señal original y la señal granulada
+
 **voces**: Para cada una de las 6 voces se cuenta con: un switch para prenderla/apagarla, un fader de volumen y un número de transposición en semitonos en relación a la altura original que puede ser positivo o negativo
 
 **forma de ventana**: Distintas envolventes para los granos
 
 **smooth**: Introduce un breve fade para reducir los clicks que generan las formas de ventana straight, down y up
+
+**gain**: Ganancia de salida
 
 ## créditos
 - [Pure Data](https://github.com/pure-data/pure-data) por Miller Puckette y muchxs más.
