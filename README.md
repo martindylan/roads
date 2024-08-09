@@ -1,6 +1,6 @@
 # roads~
 ![img](https://raw.githubusercontent.com/martindylan/martindylan.github.io/master/static/media/roads.2fd9a094e152cde14122.png)  
-Efecto de audio granular polifónico (varios "trenes" de granos en distintas alturas), desarrollado en [Pure Data](https://github.com/pure-data/pure-data) + [Camomile](https://github.com/pierreguillot/Camomile).  
+Efecto de audio granular polifónico (hasta seis "trenes" de granos), desarrollado en [Pure Data](https://github.com/pure-data/pure-data) + [Camomile](https://github.com/pierreguillot/Camomile).  
 Se puede utilizar como plugin VST3 o como abstracción dentro de Pure Data.
 
 ## instalación del plugin
@@ -27,7 +27,7 @@ Descargar de la [última release](https://github.com/martindylan/roads/releases/
 
 **dry/wet**: Mezcla entre la señal original y la señal granulada
 
-**voces**: Para cada una de las 6 voces se cuenta con: un switch para prenderla/apagarla, un fader de volumen y un número de transposición en semitonos en relación a la altura original que puede ser positivo o negativo
+**voices**: Para cada una de las 6 voces se cuenta con: un switch para prenderla/apagarla, un fader de volumen y un número de transposición en semitonos en relación a la altura original que puede ser positivo o negativo
 
 **forma de ventana**: Distintas envolventes para los granos
 
